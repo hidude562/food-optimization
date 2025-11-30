@@ -3,32 +3,10 @@ import requests
 import base64
 from typing import Dict, List, Optional
 import time
-from http.server import HTTPServer, BaseHTTPRequestHandler
-from urllib.parse import urlparse, parse_qs
-import webbrowser
+import json
+import csv
 
 from dotenv import load_dotenv
-
-
-class CallbackHandler(BaseHTTPRequestHandler):
-    auth_code = None
-
-    def do_GET(self):
-        query_components = parse_qs(urlparse(self.path).query)
-
-        if 'code' in query_components:
-            CallbackHandler.auth_code = query_components['code'][0]
-            self.send_response(200)
-            self.send_header('Content-type', 'text/html')
-            self.end_headers()
-            self.wfile.write(
-                b'<html><body><h1>Authorization successful!</h1><p>You can close this window.</p></body></html>')
-        else:
-            self.send_response(400)
-            self.end_headers()
-
-    def log_message(self, format, *args):
-        pass
 
 
 class KrogerAPI:
@@ -41,7 +19,6 @@ class KrogerAPI:
         self.redirect_uri = redirect_uri
         self.use_sandbox = use_sandbox
 
-        # Set base URL based on environment
         if use_sandbox:
             self.base_url = "https://api-ce.kroger.com/v1"
             print("🧪 Using SANDBOX environment")
@@ -53,7 +30,7 @@ class KrogerAPI:
         self.nearest_store_id = None
 
     def get_access_token_client_credentials(self) -> str:
-        """Get OAuth2 access token using client credentials (no user auth needed)"""
+        """Get OAuth2 access token using client credentials"""
         token_url = f"{self.base_url}/connect/oauth2/token"
 
         credentials = f"{self.client_id}:{self.client_secret}"
@@ -75,62 +52,6 @@ class KrogerAPI:
         self.access_token = response.json()["access_token"]
         print(f"✓ Access token obtained")
         return self.access_token
-
-    def get_authorization_code(self) -> str:
-        """Start OAuth2 authorization code flow (for user-specific data)"""
-        auth_url = f"{self.base_url}/connect/oauth2/authorize"
-
-        params = {
-            "scope": "product.compact",
-            "response_type": "code",
-            "client_id": self.client_id,
-            "redirect_uri": self.redirect_uri
-        }
-
-        param_string = "&".join([f"{k}={v}" for k, v in params.items()])
-        full_url = f"{auth_url}?{param_string}"
-
-        print(f"Opening browser for authorization...")
-        print(f"If browser doesn't open, visit: {full_url}")
-
-        server = HTTPServer(('localhost', 8000), CallbackHandler)
-        webbrowser.open(full_url)
-
-        print("Waiting for authorization...")
-        while CallbackHandler.auth_code is None:
-            server.handle_request()
-
-        return CallbackHandler.auth_code
-
-    def get_access_token_with_auth_code(self, auth_code: str) -> str:
-        """Exchange authorization code for access token"""
-        token_url = f"{self.base_url}/connect/oauth2/token"
-
-        credentials = f"{self.client_id}:{self.client_secret}"
-        encoded_credentials = base64.b64encode(credentials.encode()).decode()
-
-        headers = {
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Authorization": f"Basic {encoded_credentials}"
-        }
-
-        data = {
-            "grant_type": "authorization_code",
-            "code": auth_code,
-            "redirect_uri": self.redirect_uri
-        }
-
-        response = requests.post(token_url, headers=headers, data=data)
-        response.raise_for_status()
-
-        self.access_token = response.json()["access_token"]
-        print(f"✓ Access token obtained")
-        return self.access_token
-
-    def authenticate_with_user(self):
-        """Complete authentication flow with user authorization"""
-        auth_code = self.get_authorization_code()
-        self.get_access_token_with_auth_code(auth_code)
 
     def get_nearest_store(self) -> Optional[Dict]:
         """Find the nearest Kroger store based on ZIP code"""
@@ -161,82 +82,55 @@ class KrogerAPI:
             print("✗ No stores found near the provided ZIP code")
             return None
 
-    def get_products(self, limit: int = 50, start: int = 1, term: str = None) -> Dict:
-        """Get products from the nearest store"""
-        url = f"{self.base_url}/products"
+    def get_product_details(self, product_id: str) -> Dict:
+        """Get detailed product information including nutrition facts"""
+        url = f"{self.base_url}/products/{product_id}"
 
         headers = {
             "Authorization": f"Bearer {self.access_token}"
         }
 
         params = {
-            "filter.limit": limit,
-            "filter.start": start
+            "filter.locationId": self.nearest_store_id
         }
-
-        # Add location filter if we have a store
-        if self.nearest_store_id:
-            params["filter.locationId"] = self.nearest_store_id
-
-        # Add search term if provided
-        if term:
-            params["filter.term"] = term
 
         response = requests.get(url, headers=headers, params=params)
         response.raise_for_status()
 
         return response.json()
 
-    def search_products(self, search_term: str, max_results: int = 100) -> List[Dict]:
-        """Search for specific products"""
+    def search_products(self, search_term: str = None, max_results: int = 1000) -> List[Dict]:
+        """Search for products"""
+        url = f"{self.base_url}/products"
+
+        headers = {
+            "Authorization": f"Bearer {self.access_token}"
+        }
+
         all_products = []
         start = 1
         limit = 50
 
-        print(f"\nSearching for '{search_term}'...")
+        if search_term:
+            print(f"Searching for '{search_term}'...")
+        else:
+            print(f"Fetching all products...")
 
         while len(all_products) < max_results:
+            params = {
+                "filter.locationId": self.nearest_store_id,
+                "filter.limit": limit,
+                "filter.start": start
+            }
+
+            if search_term:
+                params["filter.term"] = search_term
+
             try:
-                data = self.get_products(limit=limit, start=start, term=search_term)
-                products = data.get("data", [])
+                response = requests.get(url, headers=headers, params=params)
+                response.raise_for_status()
 
-                if not products:
-                    break
-
-                all_products.extend(products)
-                print(f"  Found {len(all_products)} products so far...")
-
-                pagination = data.get("meta", {}).get("pagination", {})
-                total = pagination.get("total", 0)
-
-                if len(all_products) >= total or len(all_products) >= max_results:
-                    break
-
-                start += limit
-                time.sleep(0.5)
-
-            except requests.exceptions.HTTPError as e:
-                if e.response.status_code == 429:
-                    print("  Rate limited, waiting 60 seconds...")
-                    time.sleep(60)
-                else:
-                    raise
-
-        all_products = all_products[:max_results]
-        print(f"✓ Total products retrieved: {len(all_products)}")
-        return all_products
-
-    def get_all_products(self, max_products: Optional[int] = None) -> List[Dict]:
-        """Fetch all products (Note: This might not work well without search term)"""
-        all_products = []
-        start = 1
-        limit = 50
-
-        print(f"\nFetching products...")
-
-        while True:
-            try:
-                data = self.get_products(limit=limit, start=start)
+                data = response.json()
                 products = data.get("data", [])
 
                 if not products:
@@ -248,90 +142,214 @@ class KrogerAPI:
                 pagination = data.get("meta", {}).get("pagination", {})
                 total = pagination.get("total", 0)
 
-                if max_products and len(all_products) >= max_products:
-                    all_products = all_products[:max_products]
-                    break
-
-                if total > 0 and len(all_products) >= total:
+                if len(all_products) >= total or len(all_products) >= max_results:
                     break
 
                 start += limit
-                time.sleep(0.5)
+                time.sleep(0.1)
 
             except requests.exceptions.HTTPError as e:
                 if e.response.status_code == 429:
                     print("  Rate limited, waiting 60 seconds...")
                     time.sleep(60)
                 else:
-                    raise
+                    print(f"  Error: {e}")
+                    break
 
+        all_products = all_products[:max_results]
         print(f"✓ Total products retrieved: {len(all_products)}")
         return all_products
 
-    def display_products(self, products: List[Dict], max_display: int = 20):
-        """Display product information"""
+    def get_all_food_products(self) -> List[Dict]:
+        """Get all food products by searching common food categories"""
+
+        # Comprehensive list of food search terms to cover all categories
+        food_categories = [
+            # Produce
+            "fruits", "vegetables", "apples", "bananas", "oranges", "berries",
+            "lettuce", "tomatoes", "potatoes", "onions", "carrots", "peppers",
+
+            # Meat & Seafood
+            "chicken", "beef", "pork", "turkey", "fish", "salmon", "shrimp",
+            "ground beef", "steak", "bacon", "sausage", "ham",
+
+            # Dairy & Eggs
+            "milk", "cheese", "yogurt", "eggs", "butter", "cream", "ice cream",
+
+            # Bakery
+            "bread", "bagels", "muffins", "cookies", "cake", "rolls", "tortillas",
+
+            # Pantry Staples
+            "pasta", "rice", "beans", "cereal", "oats", "flour", "sugar",
+            "canned", "soup", "sauce", "oil", "vinegar",
+
+            # Frozen Foods
+            "frozen pizza", "frozen vegetables", "frozen fruit", "frozen meals",
+            "ice cream", "frozen chicken", "frozen fish",
+
+            # Snacks
+            "chips", "crackers", "nuts", "popcorn", "pretzels", "granola bars",
+
+            # Beverages
+            "juice", "soda", "water", "coffee", "tea", "sports drinks",
+
+            # Condiments & Sauces
+            "ketchup", "mustard", "mayonnaise", "salad dressing", "hot sauce",
+
+            # International
+            "mexican", "italian", "asian", "indian",
+
+            # Specialty
+            "organic", "gluten free", "vegan", "vegetarian",
+        ]
+
+        all_products = []
+        seen_product_ids = set()
+
         print(f"\n{'=' * 80}")
-        print(f"PRODUCTS (showing first {min(len(products), max_display)} of {len(products)})")
+        print(f"FETCHING ALL FOOD PRODUCTS FROM {len(food_categories)} CATEGORIES")
         print(f"{'=' * 80}\n")
 
-        for i, product in enumerate(products[:max_display], 1):
-            print(f"{i}. {product.get('description', 'N/A')}")
-            print(f"   Brand: {product.get('brand', 'N/A')}")
-            print(f"   Product ID: {product.get('productId', 'N/A')}")
+        for i, category in enumerate(food_categories, 1):
+            print(f"\n[{i}/{len(food_categories)}] Category: {category}")
+            print(f"{'─' * 80}")
 
-            items = product.get('items', [])
-            if items and items[0].get('price'):
-                price = items[0]['price']
-                regular = price.get('regular', 'N/A')
-                promo = price.get('promo', 0)
+            try:
+                products = self.search_products(search_term=category, max_results=200)
 
-                if promo > 0:
-                    print(f"   Price: ${regular} (Sale: ${promo})")
-                else:
-                    print(f"   Price: ${regular}")
+                # Deduplicate products
+                new_products = 0
+                for product in products:
+                    product_id = product.get("productId")
+                    if product_id and product_id not in seen_product_ids:
+                        seen_product_ids.add(product_id)
+                        all_products.append(product)
+                        new_products += 1
 
-            if items and items[0].get('size'):
-                print(f"   Size: {items[0]['size']}")
+                print(f"  ✓ Added {new_products} new unique products")
+                print(f"  Total unique products so far: {len(all_products)}")
 
-            categories = product.get('categories', [])
-            if categories:
-                print(f"   Categories: {', '.join(categories[:3])}")
+                # Small delay between categories
+                time.sleep(0.1
+                           )
 
-            print()
+            except Exception as e:
+                print(f"  ⚠️  Error fetching category '{category}': {e}")
+                continue
 
-    def save_products_to_file(self, products: List[Dict], filename: str = "kroger_products.txt"):
-        """Save all products to a text file"""
-        with open(filename, 'w', encoding='utf-8') as f:
-            f.write(f"Total Products: {len(products)}\n")
-            f.write(f"{'=' * 80}\n\n")
+        print(f"\n{'=' * 80}")
+        print(f"✅ COMPLETED: Found {len(all_products)} unique food products")
+        print(f"{'=' * 80}\n")
 
-            for i, product in enumerate(products, 1):
-                f.write(f"{i}. {product.get('description', 'N/A')}\n")
-                f.write(f"   Product ID: {product.get('productId', 'N/A')}\n")
-                f.write(f"   Brand: {product.get('brand', 'N/A')}\n")
+        return all_products
 
-                items = product.get('items', [])
-                if items:
-                    item = items[0]
-                    if item.get('price'):
-                        price = item['price']
-                        f.write(f"   Regular Price: ${price.get('regular', 'N/A')}\n")
-                        if price.get('promo', 0) > 0:
-                            f.write(f"   Promo Price: ${price['promo']}\n")
+    def extract_nutrition_data(self, product_detail: Dict) -> Optional[Dict]:
+        """Extract nutrition data from product detail"""
+        data = product_detail.get("data", {})
 
-                    if item.get('size'):
-                        f.write(f"   Size: {item['size']}\n")
+        product_id = data.get("productId", "")
+        description = data.get("description", "")
+        brand = data.get("brand", "")
 
-                    if item.get('upc'):
-                        f.write(f"   UPC: {item['upc']}\n")
+        # Price and size
+        items = data.get("items", [])
+        price = items[0]["price"]["regular"] if items and items[0].get("price") else None
+        size = items[0].get("size", "") if items else ""
 
-                categories = product.get('categories', [])
-                if categories:
-                    f.write(f"   Categories: {', '.join(categories)}\n")
+        # Categories
+        categories = ", ".join(data.get("categories", []))
 
-                f.write("\n")
+        # Nutrition
+        nutrition_info = data.get("nutritionInformation", [])
+        if not nutrition_info:
+            return None
 
-        print(f"✓ Products saved to {filename}")
+        nutrition = nutrition_info[0]
+
+        serving = nutrition.get("servingSize", {})
+        serving_size = f"{serving.get('quantity', '')} {serving.get('unitOfMeasure', {}).get('name', '')}"
+        servings_per_pkg = nutrition.get("servingsPerPackage", {}).get("value", "")
+        rating = nutrition.get("nutritionalRating", "")
+
+        # Extract specific nutrients
+        nutrients_dict = {n.get("displayName"): n for n in nutrition.get("nutrients", [])}
+
+        def get_nutrient_value(name):
+            n = nutrients_dict.get(name, {})
+            return n.get("quantity", "")
+
+        def get_nutrient_daily(name):
+            n = nutrients_dict.get(name, {})
+            return n.get("percentDailyIntake", "")
+
+        # Ingredients
+        ingredients = nutrition.get("ingredientStatement", "")
+
+        # Allergens
+        allergens = data.get("allergens", [])
+        allergen_str = "; ".join([f"{a.get('levelOfContainmentName', '')}: {a.get('name', '')}" for a in allergens])
+
+        return {
+            "product_id": product_id,
+            "description": description,
+            "brand": brand,
+            "size": size,
+            "price": price,
+            "categories": categories,
+            "serving_size": serving_size,
+            "servings_per_package": servings_per_pkg,
+            "calories": get_nutrient_value("Calories"),
+            "calories_from_fat": get_nutrient_value("Calories from Fat"),
+            "total_fat_g": get_nutrient_value("Total Fat"),
+            "total_fat_dv": get_nutrient_daily("Total Fat"),
+            "saturated_fat_g": get_nutrient_value("Saturated Fat"),
+            "saturated_fat_dv": get_nutrient_daily("Saturated Fat"),
+            "trans_fat_g": get_nutrient_value("Trans Fat"),
+            "cholesterol_mg": get_nutrient_value("Cholesterol"),
+            "cholesterol_dv": get_nutrient_daily("Cholesterol"),
+            "sodium_mg": get_nutrient_value("Sodium"),
+            "sodium_dv": get_nutrient_daily("Sodium"),
+            "total_carb_g": get_nutrient_value("Total Carbohydrate"),
+            "total_carb_dv": get_nutrient_daily("Total Carbohydrate"),
+            "dietary_fiber_g": get_nutrient_value("Dietary Fiber"),
+            "dietary_fiber_dv": get_nutrient_daily("Dietary Fiber"),
+            "sugars_g": get_nutrient_value("Sugars"),
+            "protein_g": get_nutrient_value("Protein"),
+            "protein_dv": get_nutrient_daily("Protein"),
+            "vitamin_a_dv": get_nutrient_daily("Vitamin A"),
+            "vitamin_c_dv": get_nutrient_daily("Vitamin C"),
+            "vitamin_d_dv": get_nutrient_daily("Vitamin D"),
+            "calcium_dv": get_nutrient_daily("Calcium"),
+            "iron_dv": get_nutrient_daily("Iron"),
+            "potassium_mg": get_nutrient_value("Potassium"),
+            "potassium_dv": get_nutrient_daily("Potassium"),
+            "nutritional_rating": rating,
+            "ingredients": ingredients[:500] if ingredients else "",  # Truncate long ingredients
+            "allergens": allergen_str,
+        }
+
+    def create_master_nutrition_csv(self, nutrition_data_list: List[Dict], filename: str = "kroger_all_nutrition.csv"):
+        """Create a comprehensive CSV with all nutrition data"""
+
+        if not nutrition_data_list:
+            print("No nutrition data to save!")
+            return
+
+        # Get all unique keys
+        all_keys = set()
+        for item in nutrition_data_list:
+            all_keys.update(item.keys())
+
+        fieldnames = sorted(all_keys)
+
+        with open(filename, 'w', newline='', encoding='utf-8') as f:
+            writer = csv.DictWriter(f, fieldnames=fieldnames)
+            writer.writeheader()
+            writer.writerows(nutrition_data_list)
+
+        print(f"\n✅ Master nutrition CSV saved to {filename}")
+        print(f"   Total products: {len(nutrition_data_list)}")
+        print(f"   Columns: {len(fieldnames)}")
 
 
 def main():
@@ -340,55 +358,140 @@ def main():
     zip_code = os.getenv("KROGER_USER_ZIP_CODE")
 
     if not all([client_id, client_secret, zip_code]):
-        print(
-            "Error: Please set KROGER_CLIENT_ID, KROGER_CLIENT_SECRET, and KROGER_USER_ZIP_CODE environment variables")
+        print("Error: Please set environment variables")
         return
 
-    # Use sandbox=True since your credentials work in sandbox
     kroger = KrogerAPI(client_id, client_secret, zip_code, use_sandbox=True)
 
     try:
-        # Use client credentials (no user login required for product data)
+        # Authenticate
         kroger.get_access_token_client_credentials()
 
         # Find nearest store
         store = kroger.get_nearest_store()
+        if not store:
+            return
 
-        if store:
-            # Option 1: Search for specific categories
-            print("\n" + "=" * 80)
-            print("OPTION 1: Search for specific products")
-            print("=" * 80)
-
-            search_terms = ["chicken", "milk", "bread", "eggs", "bananas"]
-            all_products = []
-
-            for term in search_terms:
-                products = kroger.search_products(term, max_results=50)
-                all_products.extend(products)
-
-            kroger.display_products(all_products, max_display=20)
-            kroger.save_products_to_file(all_products, "kroger_search_products.txt")
-
-        # Option 2: Try to get all products (may be limited in sandbox)
+        # Get all food products
         print("\n" + "=" * 80)
-        print("OPTION 2: Get all available products")
+        print("STEP 1: COLLECTING ALL FOOD PRODUCTS")
         print("=" * 80)
-        products = kroger.get_all_products(max_products=200)
 
-        if products:
-            kroger.display_products(products, max_display=20)
-            kroger.save_products_to_file(products, "kroger_all_products.txt")
+        all_products = kroger.get_all_food_products()
+
+        if not all_products:
+            print("No products found!")
+            return
+
+        # Save basic product list
+        with open("kroger_all_products.json", "w") as f:
+            json.dump(all_products, f, indent=2)
+        print(f"✓ Basic product list saved to kroger_all_products.json")
+
+        # Get detailed nutrition for each product
+        print("\n" + "=" * 80)
+        print(f"STEP 2: FETCHING DETAILED NUTRITION FOR {len(all_products)} PRODUCTS")
+        print("=" * 80)
+        print("⚠️  This may take a while...")
+
+        nutrition_data_list = []
+        failed_products = []
+
+        for i, product in enumerate(all_products, 1):
+            product_id = product.get("productId")
+            description = product.get("description", "Unknown")
+
+            if not product_id:
+                continue
+
+            # Progress indicator
+            if i % 10 == 0:
+                print(f"\n[{i}/{len(all_products)}] Progress: {(i / len(all_products) * 100):.1f}%")
+                print(f"  Successfully fetched: {len(nutrition_data_list)}")
+                print(f"  Failed: {len(failed_products)}")
+
+            try:
+                product_detail = kroger.get_product_details(product_id)
+                nutrition_data = kroger.extract_nutrition_data(product_detail)
+
+                if nutrition_data:
+                    nutrition_data_list.append(nutrition_data)
+                    if i % 10 == 1:  # Show sample
+                        print(f"  ✓ {description[:60]}")
+                else:
+                    failed_products.append({
+                        "id": product_id,
+                        "description": description,
+                        "reason": "No nutrition info"
+                    })
+
+                # Rate limiting - be nice to the API
+                time.sleep(0.1)
+
+            except requests.exceptions.HTTPError as e:
+                if e.response.status_code == 429:
+                    print(f"\n  ⚠️  Rate limited! Waiting 30 seconds...")
+                    time.sleep(30)
+                    # Retry this product
+                    try:
+                        product_detail = kroger.get_product_details(product_id)
+                        nutrition_data = kroger.extract_nutrition_data(product_detail)
+                        if nutrition_data:
+                            nutrition_data_list.append(nutrition_data)
+                    except:
+                        failed_products.append({
+                            "id": product_id,
+                            "description": description,
+                            "reason": str(e)
+                        })
+                else:
+                    failed_products.append({
+                        "id": product_id,
+                        "description": description,
+                        "reason": str(e)
+                    })
+            except Exception as e:
+                failed_products.append({
+                    "id": product_id,
+                    "description": description,
+                    "reason": str(e)
+                })
+
+        # Save results
+        print("\n" + "=" * 80)
+        print("SAVING RESULTS")
+        print("=" * 80)
+
+        kroger.create_master_nutrition_csv(nutrition_data_list)
+
+        # Save failed products log
+        if failed_products:
+            with open("kroger_failed_products.json", "w") as f:
+                json.dump(failed_products, f, indent=2)
+            print(f"⚠️  Failed products log saved to kroger_failed_products.json")
+
+        # Summary
+        print("\n" + "=" * 80)
+        print("FINAL SUMMARY")
+        print("=" * 80)
+        print(f"Total products found: {len(all_products)}")
+        print(f"Successfully fetched nutrition: {len(nutrition_data_list)}")
+        print(f"Failed to fetch: {len(failed_products)}")
+        print(f"Success rate: {(len(nutrition_data_list) / len(all_products) * 100):.1f}%")
 
     except requests.exceptions.HTTPError as e:
         print(f"HTTP Error: {e}")
         print(f"Response: {e.response.text}")
+    except KeyboardInterrupt:
+        print("\n\n⚠️  Process interrupted by user!")
+        print("Saving partial results...")
+        if 'nutrition_data_list' in locals() and nutrition_data_list:
+            kroger.create_master_nutrition_csv(nutrition_data_list, "kroger_partial_nutrition.csv")
     except Exception as e:
         print(f"Error: {e}")
         import traceback
         traceback.print_exc()
 
 load_dotenv()
-
 if __name__ == "__main__":
     main()

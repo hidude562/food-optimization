@@ -1,0 +1,971 @@
+[
+  {
+    "product_id": "0001111095555",
+    "description": "Kroger® Boneless Skinless Chicken Breast Portions with Rib Meat",
+    "brand": "Kroger",
+    "size": "6 lb",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 18.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T22:43:15.382Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0006456322701",
+    "description": "Yummy Whole Grain  Chicken Breast Dinosaur-Shaped",
+    "brand": "Yummy",
+    "size": "35 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 9.79,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-11-14T09:25:24.635Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0002370001485",
+    "description": "Tyson® Fully Cooked Southern Style Chicken Breast Tenderloins",
+    "brand": "Tyson",
+    "size": "25 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 9.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T15:08:08.628Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001111097017",
+    "description": "Heritage Farm™ Boneless Skinless Chicken Breasts",
+    "brand": "Heritage Farm",
+    "size": "48 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 10,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-24T20:14:47.137Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0024581150000",
+    "description": "Private Selection™ Lower Sodium Golden Roasted Chicken Breast",
+    "brand": "Private Selection",
+    "size": "1 lb",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 11.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T12:19:03.481Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0024061550000",
+    "description": "Simple Truth™ Natural Raised Cage Free Boneless & Skinless Chicken Breast",
+    "brand": "Simple Truth",
+    "size": "1 lb",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 5.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-06-16T04:18:07.123Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0004470003159",
+    "description": "Oscar Mayer Deli Fresh Rotisserie Seasoned Chicken Breast Sliced Lunch Meat Family Size",
+    "brand": "Oscar Mayer",
+    "size": "16 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 7.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T15:21:24.312Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007274580431",
+    "description": "Perdue Frozen Chicken Breast Tenders",
+    "brand": "Perdue",
+    "size": "29 oz.",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 7.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-06-16T04:28:12.204Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007274554618",
+    "description": "Perdue Harvestland Boneless Skinless Chicken Breasts",
+    "brand": "Perdue",
+    "size": "2.25 lb",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 10,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-06-22T10:52:02.054Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001111002008",
+    "description": "Kroger® Shaved Buffalo Chicken Breast",
+    "brand": "Kroger",
+    "size": "14 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2024-01-07T16:51:18.407Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0004000000031",
+    "description": "M&M's Milk Chocolate Candy",
+    "brand": "M&M's",
+    "size": "1.69 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 1.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T16:16:57.183Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0004000000032",
+    "description": "M&M's® Peanut Milk Chocolate Candy",
+    "brand": "M&M's",
+    "size": "1.74 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 1.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T15:54:13.472Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0004000000431",
+    "description": "M&M'S Milk Chocolate Candy Share Size",
+    "brand": "M&M's",
+    "size": "3.14 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 2.69,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T07:30:51.144Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001070085843",
+    "description": "Heath Extra Large Milk Chocolate English Toffee Bar",
+    "brand": "Heath",
+    "size": "4 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T15:43:24.765Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0003400040568",
+    "description": "REESE'S Milk Chocolate Peanut Butter Snack Size Cups Candy Individually Wrapped",
+    "brand": "Reese's",
+    "size": "4.4 oz / 8 count",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.19,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-11T08:42:03.344Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007726004138",
+    "description": "Russell Stover Pecan Delight Milk Chocolate Box",
+    "brand": "Russell Stover",
+    "size": "8.1 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 12.99,
+      "promo": 7.49,
+      "expirationDate": {
+        "value": "2025-12-30T04:59:59.999Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-11T08:41:18.143Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0003400040241",
+    "description": "REESE'S Milk Chocolate Snack Size Peanut Butter Cups Candy Bag",
+    "brand": "Reese's",
+    "size": "33 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 14.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T21:09:19.686Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0003400029005",
+    "description": "HERSHEY'S Milk Chocolate Full Size S’mores Candy Bars",
+    "brand": "Hershey's (7176)",
+    "size": "6 ct / 1.6 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": []
+  },
+  {
+    "product_id": "0001111042850",
+    "description": "Simple Truth Organic® Whole Milk",
+    "brand": "Simple Truth Organic",
+    "size": "1/2 gal",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 4.69,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T12:56:55.027Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001111042852",
+    "description": "Simple Truth Organic® 2% Reduced Fat Milk",
+    "brand": "Simple Truth Organic",
+    "size": "1/2 gal",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 4.69,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T12:45:58.709Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0085675000200",
+    "description": "Rudi's Gluten-Free Original Sandwich Bread",
+    "brand": "Rudi's",
+    "size": "18 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 7.29,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T13:05:11.065Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007518500700",
+    "description": "Martin's Sandwich Potato Bread",
+    "brand": "Martin's",
+    "size": "18 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 4.79,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T13:13:27.040Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0085675000201",
+    "description": "Rudi's Gluten Free Multigrain Sandwich Bread",
+    "brand": "Rudi's",
+    "size": "18 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2024-07-04T22:24:59.645Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007131404972",
+    "description": "Perfection Bakeries Live Carb Smart White Bread",
+    "brand": "Perfection Bakeries",
+    "size": "14 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 5.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T16:39:31.398Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007882110008",
+    "description": "Nickles Giant Round Top Toastmaster White Bread",
+    "brand": "Nickles",
+    "size": "20 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 2.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-06-16T04:20:20.238Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007225002074",
+    "description": "Nature's Own Perfectly Crafted White Bread",
+    "brand": "Nature's Own",
+    "size": "22 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 4.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T15:46:25.925Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0077403419832",
+    "description": "Backerhaus Veit Tuscan White Bachelor Sliced Bread Loaf",
+    "brand": "Backerhaus Veit",
+    "size": "17.64 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T09:55:31.019Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007347200101",
+    "description": "Food for Life 7 Sprouted Grains Bread",
+    "brand": "Food for Life",
+    "size": "24 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-06-16T04:19:39.770Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007131410506",
+    "description": "Aunt Millie's Healthy Goodness Fiber & Flavor Potato Bread",
+    "brand": "Aunt Millie's",
+    "size": "20 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.29,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T12:13:19.411Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0069899781024",
+    "description": "Udi's Gluten Free Delicious Whole Grain Sandwich Bread",
+    "brand": "Udi's",
+    "size": "18 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 7.49,
+      "promo": 6.49,
+      "expirationDate": {
+        "value": "2025-11-25T04:59:59.999Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T10:30:19.721Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007790000029",
+    "description": "Jimmy Dean Omelet Minis Gouda & Bacon Breakfast Cup",
+    "brand": "Jimmy Dean",
+    "size": "3.2 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2024-07-04T22:35:43.421Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001115050291",
+    "description": "Simply Roundy's Organic Large Eggs",
+    "brand": "Simply Roundy's",
+    "size": "18 ct",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": []
+  },
+  {
+    "product_id": "0068954408300",
+    "description": "Fage Total 5% Greek Strained Yogurt",
+    "brand": "Fage",
+    "size": "32 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T18:57:16.495Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0068954408301",
+    "description": "Fage Total 0% Milkfat Plain Greek Yogurt",
+    "brand": "Fage",
+    "size": "32 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T18:57:35.947Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0068954408302",
+    "description": "Fage Total 2% Greek Strained Yogurt",
+    "brand": "Fage",
+    "size": "35.3 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T18:59:34.775Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0004157005670",
+    "description": "Almond Breeze Unsweetened Original Almondmilk",
+    "brand": "Almond Breeze",
+    "size": "1/2 gal",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.79,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T14:34:36.098Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0068954408060",
+    "description": "Fage Total 5% Plain Greek Yogurt",
+    "brand": "Fage",
+    "size": "5.3 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": []
+  },
+  {
+    "product_id": "0009396651300",
+    "description": "Organic Valley Whole Milk",
+    "brand": "Organic Valley",
+    "size": "0.5 gal",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 6.29,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T15:52:24.505Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001111060933",
+    "description": "Kroger® Grade A Large Eggs",
+    "brand": "Kroger",
+    "size": "18 ct",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 2.98,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-11-01T08:38:05.195Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0004410015618",
+    "description": "Planet Oat Original Oatmilk",
+    "brand": "Planet Oat",
+    "size": "52 fl oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.69,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T10:00:13.327Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007965604968",
+    "description": "Banana Boat Ultra Sport Sunscreen Lotion SPF 100",
+    "brand": "Banana Boat",
+    "size": "4 fl oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 12.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-29T04:22:00.211Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0005215970119",
+    "description": "Stonyfield Organic Kids Whole Milk Strawberry Banana Yogurt 6 Count",
+    "brand": "Stonyfield Organic",
+    "size": "6 ct / 4 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 5.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T17:04:00.944Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0003663200839",
+    "description": "Oikos Triple Zero Banana Creme Blended Greek Yogurt",
+    "brand": "Dannon",
+    "size": "5.3 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 1.59,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T22:12:36.732Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007047000313",
+    "description": "Yoplait® Gluten Free Original Strawberry Banana Low Fat Yogurt",
+    "brand": "Yoplait",
+    "size": "6 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 0.8,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T17:02:41.634Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007965602949",
+    "description": "Banana Boat Sensitive Mineral Enriched Sunscreen Spray SPF 50 Hypoallergenic Paraben Free",
+    "brand": "Banana Boat",
+    "size": "6 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 11.19,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-02-10T12:44:01.829Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0081939302059",
+    "description": "LaLa Strawberry Banana Probiotic Yogurt Smoothie Drink",
+    "brand": "LaLa",
+    "size": "7 fl oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 1.39,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T10:06:26.384Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007203001842",
+    "description": "Entenmann's Little Bites Banana Mini Muffin Pouches",
+    "brand": "Entenmann's Little Bites",
+    "size": "5 ct / 8.25 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 5.79,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-04T09:02:24.773Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0001111007291",
+    "description": "Bakery Fresh Goodness Banana Nut Muffins",
+    "brand": "Bakery Fresh Goodness",
+    "size": "4 ct / 15 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 5,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-01T22:09:30.186Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007146427040",
+    "description": "Bolthouse Farms® Strawberry Banana Fruit Juice Smoothie",
+    "brand": "Bolthouse Farms",
+    "size": "15.2 fl oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 3.49,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T09:47:15.559Z",
+        "timezone": "Z"
+      }
+    }
+  },
+  {
+    "product_id": "0007965601332",
+    "description": "Banana Boat Ultra Sport Sunscreen Spray Twin Pack 2 Count SPF 50+",
+    "brand": "Banana Boat",
+    "size": "2 ct / 6 oz",
+    "nutrition": {},
+    "ingredients": null,
+    "allergens": [],
+    "price": {
+      "regular": 16.99,
+      "expirationDate": {
+        "value": "9999-12-31T00:00:00Z",
+        "timezone": "Z"
+      },
+      "effectiveDate": {
+        "value": "2025-10-02T10:06:56.661Z",
+        "timezone": "Z"
+      }
+    }
+  }
+]

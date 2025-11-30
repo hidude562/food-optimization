@@ -1,0 +1,502 @@
+Total Products: 50
+====================================================================================================
+
+1. Kroger® Boneless Skinless Chicken Breast Portions with Rib Meat
+   Brand: Kroger
+   Product ID: 0001111095555
+   Size: 6 lb
+   Regular Price: $18.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+2. Yummy Whole Grain  Chicken Breast Dinosaur-Shaped
+   Brand: Yummy
+   Product ID: 0006456322701
+   Size: 35 oz
+   Regular Price: $9.79
+
+   No nutrition facts available
+
+====================================================================================================
+
+3. Tyson® Fully Cooked Southern Style Chicken Breast Tenderloins
+   Brand: Tyson
+   Product ID: 0002370001485
+   Size: 25 oz
+   Regular Price: $9.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+4. Heritage Farm™ Boneless Skinless Chicken Breasts
+   Brand: Heritage Farm
+   Product ID: 0001111097017
+   Size: 48 oz
+   Regular Price: $10
+
+   No nutrition facts available
+
+====================================================================================================
+
+5. Private Selection™ Lower Sodium Golden Roasted Chicken Breast
+   Brand: Private Selection
+   Product ID: 0024581150000
+   Size: 1 lb
+   Regular Price: $11.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+6. Simple Truth™ Natural Raised Cage Free Boneless & Skinless Chicken Breast
+   Brand: Simple Truth
+   Product ID: 0024061550000
+   Size: 1 lb
+   Regular Price: $5.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+7. Oscar Mayer Deli Fresh Rotisserie Seasoned Chicken Breast Sliced Lunch Meat Family Size
+   Brand: Oscar Mayer
+   Product ID: 0004470003159
+   Size: 16 oz
+   Regular Price: $7.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+8. Perdue Frozen Chicken Breast Tenders
+   Brand: Perdue
+   Product ID: 0007274580431
+   Size: 29 oz.
+   Regular Price: $7.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+9. Perdue Harvestland Boneless Skinless Chicken Breasts
+   Brand: Perdue
+   Product ID: 0007274554618
+   Size: 2.25 lb
+   Regular Price: $10
+
+   No nutrition facts available
+
+====================================================================================================
+
+10. Kroger® Shaved Buffalo Chicken Breast
+   Brand: Kroger
+   Product ID: 0001111002008
+   Size: 14 oz
+   Regular Price: $6.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+11. M&M's Milk Chocolate Candy
+   Brand: M&M's
+   Product ID: 0004000000031
+   Size: 1.69 oz
+   Regular Price: $1.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+12. M&M's® Peanut Milk Chocolate Candy
+   Brand: M&M's
+   Product ID: 0004000000032
+   Size: 1.74 oz
+   Regular Price: $1.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+13. M&M'S Milk Chocolate Candy Share Size
+   Brand: M&M's
+   Product ID: 0004000000431
+   Size: 3.14 oz
+   Regular Price: $2.69
+
+   No nutrition facts available
+
+====================================================================================================
+
+14. Heath Extra Large Milk Chocolate English Toffee Bar
+   Brand: Heath
+   Product ID: 0001070085843
+   Size: 4 oz
+   Regular Price: $3.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+15. REESE'S Milk Chocolate Peanut Butter Snack Size Cups Candy Individually Wrapped
+   Brand: Reese's
+   Product ID: 0003400040568
+   Size: 4.4 oz / 8 count
+   Regular Price: $3.19
+
+   No nutrition facts available
+
+====================================================================================================
+
+16. Russell Stover Pecan Delight Milk Chocolate Box
+   Brand: Russell Stover
+   Product ID: 0007726004138
+   Size: 8.1 oz
+   Regular Price: $12.99
+   Promo Price: $7.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+17. REESE'S Milk Chocolate Snack Size Peanut Butter Cups Candy Bag
+   Brand: Reese's
+   Product ID: 0003400040241
+   Size: 33 oz
+   Regular Price: $14.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+18. HERSHEY'S Milk Chocolate Full Size S’mores Candy Bars
+   Brand: Hershey's (7176)
+   Product ID: 0003400029005
+   Size: 6 ct / 1.6 oz
+
+   No nutrition facts available
+
+====================================================================================================
+
+19. Simple Truth Organic® Whole Milk
+   Brand: Simple Truth Organic
+   Product ID: 0001111042850
+   Size: 1/2 gal
+   Regular Price: $4.69
+
+   No nutrition facts available
+
+====================================================================================================
+
+20. Simple Truth Organic® 2% Reduced Fat Milk
+   Brand: Simple Truth Organic
+   Product ID: 0001111042852
+   Size: 1/2 gal
+   Regular Price: $4.69
+
+   No nutrition facts available
+
+====================================================================================================
+
+21. Rudi's Gluten-Free Original Sandwich Bread
+   Brand: Rudi's
+   Product ID: 0085675000200
+   Size: 18 oz
+   Regular Price: $7.29
+
+   No nutrition facts available
+
+====================================================================================================
+
+22. Martin's Sandwich Potato Bread
+   Brand: Martin's
+   Product ID: 0007518500700
+   Size: 18 oz
+   Regular Price: $4.79
+
+   No nutrition facts available
+
+====================================================================================================
+
+23. Rudi's Gluten Free Multigrain Sandwich Bread
+   Brand: Rudi's
+   Product ID: 0085675000201
+   Size: 18 oz
+   Regular Price: $6.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+24. Perfection Bakeries Live Carb Smart White Bread
+   Brand: Perfection Bakeries
+   Product ID: 0007131404972
+   Size: 14 oz
+   Regular Price: $5.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+25. Nickles Giant Round Top Toastmaster White Bread
+   Brand: Nickles
+   Product ID: 0007882110008
+   Size: 20 oz
+   Regular Price: $2.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+26. Nature's Own Perfectly Crafted White Bread
+   Brand: Nature's Own
+   Product ID: 0007225002074
+   Size: 22 oz
+   Regular Price: $4.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+27. Backerhaus Veit Tuscan White Bachelor Sliced Bread Loaf
+   Brand: Backerhaus Veit
+   Product ID: 0077403419832
+   Size: 17.64 oz
+   Regular Price: $3.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+28. Food for Life 7 Sprouted Grains Bread
+   Brand: Food for Life
+   Product ID: 0007347200101
+   Size: 24 oz
+   Regular Price: $6.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+29. Aunt Millie's Healthy Goodness Fiber & Flavor Potato Bread
+   Brand: Aunt Millie's
+   Product ID: 0007131410506
+   Size: 20 oz
+   Regular Price: $3.29
+
+   No nutrition facts available
+
+====================================================================================================
+
+30. Udi's Gluten Free Delicious Whole Grain Sandwich Bread
+   Brand: Udi's
+   Product ID: 0069899781024
+   Size: 18 oz
+   Regular Price: $7.49
+   Promo Price: $6.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+31. Jimmy Dean Omelet Minis Gouda & Bacon Breakfast Cup
+   Brand: Jimmy Dean
+   Product ID: 0007790000029
+   Size: 3.2 oz
+   Regular Price: $3.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+32. Simply Roundy's Organic Large Eggs
+   Brand: Simply Roundy's
+   Product ID: 0001115050291
+   Size: 18 ct
+
+   No nutrition facts available
+
+====================================================================================================
+
+33. Fage Total 5% Greek Strained Yogurt
+   Brand: Fage
+   Product ID: 0068954408300
+   Size: 32 oz
+   Regular Price: $6.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+34. Fage Total 0% Milkfat Plain Greek Yogurt
+   Brand: Fage
+   Product ID: 0068954408301
+   Size: 32 oz
+   Regular Price: $6.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+35. Fage Total 2% Greek Strained Yogurt
+   Brand: Fage
+   Product ID: 0068954408302
+   Size: 35.3 oz
+   Regular Price: $6.99
+
+   No nutrition facts available
+
+====================================================================================================
+
+36. Almond Breeze Unsweetened Original Almondmilk
+   Brand: Almond Breeze
+   Product ID: 0004157005670
+   Size: 1/2 gal
+   Regular Price: $3.79
+
+   No nutrition facts available
+
+====================================================================================================
+
+37. Fage Total 5% Plain Greek Yogurt
+   Brand: Fage
+   Product ID: 0068954408060
+   Size: 5.3 oz
+
+   No nutrition facts available
+
+====================================================================================================
+
+38. Organic Valley Whole Milk
+   Brand: Organic Valley
+   Product ID: 0009396651300
+   Size: 0.5 gal
+   Regular Price: $6.29
+
+   No nutrition facts available
+
+====================================================================================================
+
+39. Kroger® Grade A Large Eggs
+   Brand: Kroger
+   Product ID: 0001111060933
+   Size: 18 ct
+   Regular Price: $2.98
+
+   No nutrition facts available
+
+====================================================================================================
+
+40. Planet Oat Original Oatmilk
+   Brand: Planet Oat
+   Product ID: 0004410015618
+   Size: 52 fl oz
+   Regular Price: $3.69
+
+   No nutrition facts available
+
+====================================================================================================
+
+41. Banana Boat Ultra Sport Sunscreen Lotion SPF 100
+   Brand: Banana Boat
+   Product ID: 0007965604968
+   Size: 4 fl oz
+   Regular Price: $12.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+42. Stonyfield Organic Kids Whole Milk Strawberry Banana Yogurt 6 Count
+   Brand: Stonyfield Organic
+   Product ID: 0005215970119
+   Size: 6 ct / 4 oz
+   Regular Price: $5.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+43. Oikos Triple Zero Banana Creme Blended Greek Yogurt
+   Brand: Dannon
+   Product ID: 0003663200839
+   Size: 5.3 oz
+   Regular Price: $1.59
+
+   No nutrition facts available
+
+====================================================================================================
+
+44. Yoplait® Gluten Free Original Strawberry Banana Low Fat Yogurt
+   Brand: Yoplait
+   Product ID: 0007047000313
+   Size: 6 oz
+   Regular Price: $0.8
+
+   No nutrition facts available
+
+====================================================================================================
+
+45. Banana Boat Sensitive Mineral Enriched Sunscreen Spray SPF 50 Hypoallergenic Paraben Free
+   Brand: Banana Boat
+   Product ID: 0007965602949
+   Size: 6 oz
+   Regular Price: $11.19
+
+   No nutrition facts available
+
+====================================================================================================
+
+46. LaLa Strawberry Banana Probiotic Yogurt Smoothie Drink
+   Brand: LaLa
+   Product ID: 0081939302059
+   Size: 7 fl oz
+   Regular Price: $1.39
+
+   No nutrition facts available
+
+====================================================================================================
+
+47. Entenmann's Little Bites Banana Mini Muffin Pouches
+   Brand: Entenmann's Little Bites
+   Product ID: 0007203001842
+   Size: 5 ct / 8.25 oz
+   Regular Price: $5.79
+
+   No nutrition facts available
+
+====================================================================================================
+
+48. Bakery Fresh Goodness Banana Nut Muffins
+   Brand: Bakery Fresh Goodness
+   Product ID: 0001111007291
+   Size: 4 ct / 15 oz
+   Regular Price: $5
+
+   No nutrition facts available
+
+====================================================================================================
+
+49. Bolthouse Farms® Strawberry Banana Fruit Juice Smoothie
+   Brand: Bolthouse Farms
+   Product ID: 0007146427040
+   Size: 15.2 fl oz
+   Regular Price: $3.49
+
+   No nutrition facts available
+
+====================================================================================================
+
+50. Banana Boat Ultra Sport Sunscreen Spray Twin Pack 2 Count SPF 50+
+   Brand: Banana Boat
+   Product ID: 0007965601332
+   Size: 2 ct / 6 oz
+   Regular Price: $16.99
+
+   No nutrition facts available
+
+====================================================================================================
+
